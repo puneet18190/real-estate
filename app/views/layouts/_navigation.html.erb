@@ -18,7 +18,10 @@
           <li><%= link_to 'Complex Building', complex_buildings_path %></li>
           <li><%= link_to 'Commericial Unit', commercial_units_path %></li>
         </ul>
-        <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><%= current_user.email %></a></p>
+        <p class="navbar-text navbar-right">
+          Signed in as <a href="#" class="navbar-link"><%= current_user.email %></a>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+        </p>
       </div>
 
     <% else %>
