@@ -12,6 +12,7 @@
       <th>Floors</th>
       <th>Air cond</th>
       <th>Price</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= house.floors %></td>
         <td><%= house.air_cond %></td>
         <td><%= house.price %></td>
+        <td><%= image_tag(rails_blob_path(house.image), width: 150 ) if house.image.attached? %></td>
         <td><%= link_to 'Show', house, class: 'btn btn-primary btn-sm' %></td>
         <td><%= link_to 'Edit', edit_house_path(house), class: 'btn btn-success btn-sm' %></td>
         <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>

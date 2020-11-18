@@ -25,5 +25,9 @@
   <%= @complex_building.price %>
 </p>
 
+<p>
+  <%= image_tag(rails_blob_path(@complex_building.image), width: 300 ) if @complex_building.image.attached? %>
+</p>
+
 <%= link_to 'Edit', edit_complex_building_path(@complex_building), class: 'btn btn-success' %> |
 <%= link_to 'Back', complex_buildings_path, class: 'btn btn-primary' %>

@@ -35,5 +35,9 @@
   <%= @house.price %>
 </p>
 
+<p>
+  <%= image_tag(rails_blob_path(@house.image), width: 300 ) if @house.image.attached? %>
+</p>
+
 <%= link_to 'Edit', edit_house_path(@house), class: 'btn btn-success' %> |
 <%= link_to 'Back', houses_path, class: 'btn btn-primary' %>

@@ -30,5 +30,9 @@
   <%= @commercial_unit.price %>
 </p>
 
+<p>
+  <%= image_tag(rails_blob_path(@commercial_unit.image), width: 300 ) if @commercial_unit.image.attached? %>
+</p>
+
 <%= link_to 'Edit', edit_commercial_unit_path(@commercial_unit), class: 'btn btn-success' %> |
 <%= link_to 'Back', commercial_units_path, class: 'btn btn-primary' %>
