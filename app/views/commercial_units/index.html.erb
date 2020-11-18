@@ -2,7 +2,7 @@
 
 <h1>Commercial Units</h1>
 
-<table>
+<table border="1" class="table">
   <thead>
     <tr>
       <th>Owner</th>
@@ -24,9 +24,9 @@
         <td><%= commercial_unit.sqmt %></td>
         <td><%= commercial_unit.parking %></td>
         <td><%= commercial_unit.price %></td>
-        <td><%= link_to 'Show', commercial_unit %></td>
-        <td><%= link_to 'Edit', edit_commercial_unit_path(commercial_unit) %></td>
-        <td><%= link_to 'Destroy', commercial_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', commercial_unit, class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_commercial_unit_path(commercial_unit), class: 'btn btn-success btn-sm' %></td>
+        <td><%= link_to 'Destroy', commercial_unit, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Commercial Unit', new_commercial_unit_path %>
+<%= link_to 'New Commercial Unit', new_commercial_unit_path, class: 'btn btn-primary' %>

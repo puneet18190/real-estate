@@ -2,7 +2,7 @@
 
 <h1>Complex Buildings</h1>
 
-<table>
+<table border="1" class="table">
   <thead>
     <tr>
       <th>Owner</th>
@@ -22,9 +22,9 @@
         <td><%= complex_building.units %></td>
         <td><%= complex_building.sqmt %></td>
         <td><%= complex_building.price %></td>
-        <td><%= link_to 'Show', complex_building %></td>
-        <td><%= link_to 'Edit', edit_complex_building_path(complex_building) %></td>
-        <td><%= link_to 'Destroy', complex_building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', complex_building, class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_complex_building_path(complex_building), class: 'btn btn-success btn-sm' %></td>
+        <td><%= link_to 'Destroy', complex_building, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Complex Building', new_complex_building_path %>
+<%= link_to 'New Complex Building', new_complex_building_path, class: 'btn btn-primary' %>

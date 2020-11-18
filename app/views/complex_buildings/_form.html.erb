@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :owner %>
-    <%= form.text_field :owner %>
+    <%= form.text_field :owner, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :units %>
-    <%= form.number_field :units %>
+    <%= form.number_field :units, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :sqmt %>
-    <%= form.number_field :sqmt %>
+    <%= form.number_field :sqmt, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: 'form-control', required: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
   </div>
 <% end %>
