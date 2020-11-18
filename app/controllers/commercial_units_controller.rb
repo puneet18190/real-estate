@@ -1,4 +1,5 @@
 class CommercialUnitsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_commercial_unit, only: [:show, :edit, :update, :destroy]
 
   # GET /commercial_units

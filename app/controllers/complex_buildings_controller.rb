@@ -1,4 +1,5 @@
 class ComplexBuildingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_complex_building, only: [:show, :edit, :update, :destroy]
 
   # GET /complex_buildings
