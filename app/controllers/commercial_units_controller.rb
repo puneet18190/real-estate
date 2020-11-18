@@ -70,6 +70,6 @@ class CommercialUnitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def commercial_unit_params
-      params.require(:commercial_unit).permit(:owner, :address, :shops, :sqmt, :parking, :price, :image)
+      params.require(:commercial_unit).permit(:owner, :owner_email, :address, :shops, :sqmt, :parking, :price, :image)
     end
 end

@@ -119,7 +119,7 @@
             </div>
             <div class="card-footer">
               <div class="price">Price: $10</div>
-              <button class="buy_btn btn btn-primary">Buy</button>
+              <%= button_to "Buy", purchase_path(klass: obj.class.to_s, id: obj.id), class: "buy_btn btn btn-primary" %>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Owner</th>
+      <th>Owner Email</th>
       <th>Address</th>
       <th>Units</th>
       <th>Sqmt</th>
@@ -19,6 +20,7 @@
     <% @complex_buildings.each do |complex_building| %>
       <tr>
         <td><%= complex_building.owner %></td>
+        <td><%= complex_building.owner_email %></td>
         <td><%= complex_building.address %></td>
         <td><%= complex_building.units %></td>
         <td><%= complex_building.sqmt %></td>
