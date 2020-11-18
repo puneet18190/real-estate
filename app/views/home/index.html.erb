@@ -1,2 +1,86 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <h2>Houses</h2>
+  <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @houses.each_with_index do |obj, i| %>
+        <li data-target="#myCarousel1" data-slide-to="<%= i %>" class="<% i==0 ? 'active' : '' %>"></li>
+      <% end %>
+    </ol>
+
+    <div class="carousel-inner">
+      <% @houses.each_with_index do |obj, i| %>
+        <div class="item <%= i==0 ? 'active' : '' %>">
+          <%= image_tag(rails_blob_path(obj.image), style: 'width: 100%;height:500px' ) if obj.image.attached? %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="left carousel-control" href="#myCarousel1" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </div>
+    <div class="right carousel-control" href="#myCarousel1" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Commercial Unit</h2>
+  <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @commercial_units.each_with_index do |obj, i| %>
+        <li data-target="#myCarousel2" data-slide-to="<%= i %>" class="<% i==0 ? 'active' : '' %>"></li>
+      <% end %>
+    </ol>
+
+    <div class="carousel-inner">
+      <% @commercial_units.each_with_index do |obj, i| %>
+        <div class="item <%= i==0 ? 'active' : '' %>">
+          <%= image_tag(rails_blob_path(obj.image), style: 'width: 100%;height:500px' ) if obj.image.attached? %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="left carousel-control" href="#myCarousel2" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </div>
+    <div class="right carousel-control" href="#myCarousel2" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Complex Buildings</h2>
+  <div id="myCarousel3" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @complex_buildings.each_with_index do |obj, i| %>
+        <li data-target="#myCarousel3" data-slide-to="<%= i %>" class="<% i==0 ? 'active' : '' %>"></li>
+      <% end %>
+    </ol>
+
+    <div class="carousel-inner">
+      <% @complex_buildings.each_with_index do |obj, i| %>
+        <div class="item <%= i==0 ? 'active' : '' %>">
+          <%= image_tag(rails_blob_path(obj.image), style: 'width: 100%;height:500px' ) if obj.image.attached? %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="left carousel-control" href="#myCarousel3" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </div>
+    <div class="right carousel-control" href="#myCarousel3" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </div>
+  </div>
+</div>
