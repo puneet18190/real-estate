@@ -91,21 +91,29 @@
 
 <div class="py-5">
   <div class="container">
-    <h2>Houses</h2>
     <div class="row hidden-md-up">
-      <% @houses.each do |obj| %>
+      <% @data.each do |obj| %>
         <div class="col-md-4">
           <div class="card">
             <div class="card-block">
               <%= image_tag(rails_blob_path(obj.image), style: 'width: 330px;height:200px', class: 'image' ) if obj.image.attached? %>
               <div class="middle">
                 <div class="text">
+                  <div class="card-subtitle"><%= obj.class %></div>
                   <div class="card-subtitle"><%= "Owner: #{obj.owner}" %></div>
                   <div class="card-subtitle"><%= "Address: #{obj.address}" %></div>
-                  <div class="card-subtitle"><%= "Rooms: #{obj.rooms}" %></div>
                   <div class="card-subtitle"><%= "Sqmt: #{obj.sqmt}" %></div>
-                  <div class="card-subtitle"><%= "Floors: #{obj.floors}" %></div>
-                  <div class="card-subtitle"><%= "AC: #{obj.air_cond}" %></div>
+
+                  <% if obj.class == House %>
+                    <div class="card-subtitle"><%= "Rooms: #{obj.rooms}" %></div>
+                    <div class="card-subtitle"><%= "Floors: #{obj.floors}" %></div>
+                    <div class="card-subtitle"><%= "AC: #{obj.air_cond}" %></div>
+                  <% elsif obj.class == ComplexBuilding %>
+                    <div class="card-subtitle"><%= "Units: #{obj.units}" %></div>
+                  <% elsif obj.class == CommercialUnit %>
+                    <div class="card-subtitle"><%= "Shops: #{obj.shops}" %></div>
+                    <div class="card-subtitle"><%= "Parking: #{obj.parking}" %></div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -118,56 +126,6 @@
       <% end %>
     </div>
 
-    <h2>Complex Buildings</h2>
-    <div class="row hidden-md-up">
-      <% @complex_buildings.each do |obj| %>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <%= image_tag(rails_blob_path(obj.image), style: 'width: 330px;height:200px', class: 'image' ) if obj.image.attached? %>
-              <div class="middle">
-                <div class="text">
-                  <div class="card-subtitle"><%= "Owner: #{obj.owner}" %></div>
-                  <div class="card-subtitle"><%= "Address: #{obj.address}" %></div>
-                  <div class="card-subtitle"><%= "Units: #{obj.units}" %></div>
-                  <div class="card-subtitle"><%= "Sqmt: #{obj.sqmt}" %></div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer">
-              <div class="price">Price: $10</div>
-              <button class="buy_btn btn btn-primary">Buy</button>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <h2>Commercial Unit</h2>
-    <div class="row hidden-md-up">
-      <% @commercial_units.each do |obj| %>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <%= image_tag(rails_blob_path(obj.image), style: 'width: 330px;height:200px', class: 'image' ) if obj.image.attached? %>
-              <div class="middle">
-                <div class="text">
-                  <div class="card-subtitle"><%= "Owner: #{obj.owner}" %></div>
-                  <div class="card-subtitle"><%= "Address: #{obj.address}" %></div>
-                  <div class="card-subtitle"><%= "Shops: #{obj.shops}" %></div>
-                  <div class="card-subtitle"><%= "Sqmt: #{obj.sqmt}" %></div>
-                  <div class="card-subtitle"><%= "Parking: #{obj.parking}" %></div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer">
-              <div class="price">Price: $10</div>
-              <button class="buy_btn btn btn-primary">Buy</button>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
   </div>
 </div>
 
